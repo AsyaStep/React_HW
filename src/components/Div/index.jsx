@@ -1,15 +1,29 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 
 export const Div = () => {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(json => setTodos(json));
+    },2000);    
+  },[]);
+
   return (
-    <div className="div">
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur
-      accusantium corrupti ipsam doloribus? Nemo, consequuntur eius tempore
-      voluptatem optio autem, saepe, consequatur minima tempora voluptate
-      dignissimos aperiam sequi vero debitis iusto aliquid molestias repellendus
-      illo quisquam repellat vitae ex itaque nam? Iusto recusandae quae, animi
-      molestiae porro nemo qui possimus.</p>
+    <div>
+      <ul className = "ulist">
+        { todos.length ? todos.map((item) => {
+          return <li className = "list" key={item.id}>
+            {item.title} <Button variant="btn btn-warning">Button</Button>
+          </li>         
+        }): <div class="spinner-grow text-warning" role="status">        
+      </div>}
+      </ul>
     </div>
   );
 };

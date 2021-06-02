@@ -1,12 +1,13 @@
 import './App.css';
 import Header from './components/Header';
-import Button from './components/Button';
+import ButtonProject from './components/Button';
+
 
 function App() {
   return (
     <div className="App">
       <Header/>         
-      <Button/>          
+      <ButtonProject/>           
     </div>
   );
 }

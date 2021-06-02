@@ -3,3 +3,23 @@
     padding: 15px;
     border: none;    
 }
+
+
+.list{    
+    border: gray 1px solid;
+    border-bottom-width: 0px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+li:last-child {
+    border-bottom: gray 1px solid;    
+  }
+
+.ulist{        
+    padding: 0;
+    width: 50%;
+    margin: 10px auto;
+}
