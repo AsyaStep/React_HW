@@ -1,13 +1,14 @@
 import './App.css';
 import Header from './components/Header';
-import ButtonProject from './components/Button';
+import { HomePage } from './pages';
 
 
 function App() {
   return (
     <div className="App">
       <Header/>         
-      <ButtonProject/>           
+ 
+      <HomePage/>
     </div>
   );
 }
